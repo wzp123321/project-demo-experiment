@@ -1,33 +1,40 @@
 <template>
-    <div>{{ params }}</div>
+    <div class="wrapper">
+        <PageCommon title="测试二十" :has-search="true" :has-title="true">
+            <template v-slot:search>
+                <h1>121212</h1>
+            </template>
+            <template v-slot:content>
+                <div class="test">
+                    <p>1212</p>
+                    <p>1212</p>
+                    <p>1212</p>
+                    <p>1212</p>
+                    <p>1212</p>
+                </div>
+            </template>
+        </PageCommon>
+    </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
-import { useRoute, useRouter, LocationQuery } from 'vue-router';
-import mitt from 'mitt';
-const emitter = mitt();
+import { defineComponent } from 'vue'
+import PageCommon from '@/components/PageCommon.vue';
+
 export default defineComponent({
     name: 'Demo',
-    setup() {
-        const route = useRoute();
-        const router = useRouter();
-        const params = ref<LocationQuery>()
-        onMounted(() => {
-            console.log(route.query);
-            params.value = route.query;
-            console.log('params--------------', params);
-            router.push({
-                query: {
-                    tenantCode: '121'
-                }
-            })
-        })
-        emitter.on('test', (params: any) => {
-            console.log('params--------------------', params);
-        })
-        return { params }
-    },
+    components: {
+        PageCommon
+    }
 })
 </script>
 <style lang="less" scoped>
+.wrapper {
+    width: 100%;
+    height: 100%;
+    .test {
+        height: 100%;
+        overflow-y: auto;
+        background-color: greenyellow;
+    }
+}
 </style>
