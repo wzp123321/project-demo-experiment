@@ -16,6 +16,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/demo',
     name: 'Demo',
     component: ()=>import('../views/Demo.vue'),
+  },
+  {
+    path: '/line',
+    name: 'Line',
+    component: ()=>import('../views/LineCharts.vue'),
+  },
+  {
+    path: '/bar',
+    name: 'Bar',
+    component: ()=>import('../views/BarCharts.vue'),
   }
 ]
 
