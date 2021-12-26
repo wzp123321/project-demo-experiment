@@ -4,29 +4,38 @@ import Home from '../views/Home.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/web',
+  },
+  {
+    path: '/web',
+    name: 'Web',
+    component: () => import('../views/web/index.vue'),
+  },
+  {
+    path: '/web/:pageName',
+    name: 'Web',
+    component: () => import('../views/web/index.vue'),
   },
   {
     path: '/test',
     name: 'Test',
-    component: ()=>import('../views/Test.vue'),
+    component: () => import('../pages/Test.vue'),
   },
   {
     path: '/demo',
     name: 'Demo',
-    component: ()=>import('../views/Demo.vue'),
+    component: () => import('../pages/Demo.vue'),
   },
   {
     path: '/line',
     name: 'Line',
-    component: ()=>import('../views/LineCharts.vue'),
+    component: () => import('../pages/LineCharts.vue'),
   },
   {
     path: '/bar',
     name: 'Bar',
-    component: ()=>import('../views/BarCharts.vue'),
-  }
+    component: () => import('../pages/BarCharts.vue'),
+  },
 ]
 
 const router = createRouter({

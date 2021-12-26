@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view></router-view>
 </template>
 
 <style>
@@ -11,5 +11,4 @@
   color: #2c3e50;
   height: 100%;
 }
-
 </style>
