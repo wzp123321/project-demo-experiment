@@ -18,7 +18,7 @@
   // set 1rem = viewWidth / 10
   // 设置root元素的fontSize = 其clientWidth / 10 + ‘px’
   function setRemUnit() {
-    var rem = docEl.clientWidth / 10;
+    var rem = docEl.clientWidth / 19.2;
     docEl.style.fontSize = rem + "px";
   }
 
