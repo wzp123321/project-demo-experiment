@@ -1,46 +1,55 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    redirect: '/web',
+    path: "/",
+    redirect: "/web",
   },
   {
-    path: '/web',
-    name: 'Web',
-    component: () => import('../views/web/index.vue'),
+    path: "/web",
+    name: "Web",
+    component: () => import("../views/web/index.vue"),
   },
   {
-    path: '/web/:pageName',
-    name: 'Web',
-    component: () => import('../views/web/index.vue'),
+    path: "/demo",
+    name: "Demo",
+    component: () => import("../views/demo.vue"),
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: () => import('../pages/Test.vue'),
+    path: "/echarts",
+    name: "Echarts",
+    component: () => import("../views/echarts/index.vue"),
   },
   {
-    path: '/demo',
-    name: 'Demo',
-    component: () => import('../pages/Demo.vue'),
+    path: "/web/:pageName",
+    name: "Web",
+    component: () => import("../views/web/index.vue"),
   },
   {
-    path: '/line',
-    name: 'Line',
-    component: () => import('../pages/LineCharts.vue'),
+    path: "/test",
+    name: "Test",
+    component: () => import("../pages/Test.vue"),
   },
   {
-    path: '/bar',
-    name: 'Bar',
-    component: () => import('../pages/BarCharts.vue'),
+    path: "/line",
+    name: "Line",
+    component: () => import("../pages/LineCharts.vue"),
   },
-]
+  {
+    path: "/bar",
+    name: "Bar",
+    component: () => import("../pages/BarCharts.vue"),
+  },
+  {
+    path: "/gis",
+    name: "Gis",
+    component: () => import("../pages/GisCharts.vue"),
+  },
+];
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes
-})
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+export default router;

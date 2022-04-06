@@ -9,3 +9,4 @@ declare module '*.vue' {
 declare module 'vue-grid-layout';
 
 declare module 'lodash';
+declare module 'pdfjs-dist';
