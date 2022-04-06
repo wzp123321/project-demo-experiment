@@ -16,7 +16,11 @@
       <!-- 中 -->
       <div class="middle-module"></div>
       <!-- 右 -->
-      <div class="right-module"></div>
+      <div class="right-module">
+        <EchartContainer>1233</EchartContainer>
+        <EchartContainer>1233</EchartContainer>
+        <EchartContainer>1233</EchartContainer>
+      </div>
     </div>
   </div>
 </template>
